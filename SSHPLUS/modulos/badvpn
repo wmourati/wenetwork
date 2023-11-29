@@ -32,16 +32,76 @@ fun_udp1 () {
     clear
     echo -e "\033[1;32mINICIANDO O BADVPN... \033[0m\n"
     fun_udpon () {
-        screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 10000 --max-connections-for-client 5
+        screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 10000 --max-connections-for-client 8
         [[ $(grep -wc "udpvpn" /etc/autostart) = '0' ]] && {
-		    echo -e "ps x | grep 'udpvpn' | grep -v 'grep' || screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 10000 --max-connections-for-client 5 --client-socket-sndbuf 10000" >> /etc/autostart
+		    echo -e "ps x | grep 'udpvpn' | grep -v 'grep' || screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 10000 --max-connections-for-client 8 --client-socket-sndbuf 10000" >> /etc/autostart
 		} || {
 		    sed -i '/udpvpn/d' /etc/autostart
-		    echo -e "ps x | grep 'udpvpn' | grep -v 'grep' || screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 10000 --max-connections-for-client 5 --client-socket-sndbuf 10000" >> /etc/autostart
+		    echo -e "ps x | grep 'udpvpn' | grep -v 'grep' || screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 10000 --max-connections-for-client 8 --client-socket-sndbuf 10000" >> /etc/autostart
 		}
         sleep 1
     }
+
+    fun_udpqw3 () {
+           screen -dmS udpvpn2 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7295 --max-clients 10000 --max-connections-for-client 8
+           [[ $(grep -wc "udpvpn2" /etc/autostart) = '0' ]] && {
+		       echo -e "ps x | grep 'udpvpn2' | grep -v 'grep' || screen -dmS udpvpn2 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7295 --max-clients 10000 --max-connections-for-client 8 --client-socket-sndbuf 10000" >> /etc/autostart
+		   } || {
+		       sed -i '/udpvpn2/d' /etc/autostart
+		       echo -e "ps x | grep 'udpvpn2' | grep -v 'grep' || screen -dmS udpvpn2 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7295 --max-clients 10000 --max-connections-for-client 8 --client-socket-sndbuf 10000" >> /etc/autostart
+		   }
+           sleep 1
+       }
+
+       fun_udpqw4 () {
+           screen -dmS udpvpn3 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7296 --max-clients 10000 --max-connections-for-client 8
+           [[ $(grep -wc "udpvpn3" /etc/autostart) = '0' ]] && {
+		       echo -e "ps x | grep 'udpvpn3' | grep -v 'grep' || screen -dmS udpvpn3 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7296 --max-clients 10000 --max-connections-for-client 8 --client-socket-sndbuf 10000" >> /etc/autostart
+		   } || {
+		       sed -i '/udpvpn3/d' /etc/autostart
+		       echo -e "ps x | grep 'udpvpn3' | grep -v 'grep' || screen -dmS udpvpn3 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7296 --max-clients 10000 --max-connections-for-client 8 --client-socket-sndbuf 10000" >> /etc/autostart
+		   }
+           sleep 1
+       }
+
+       fun_udpqw5 () {
+           screen -dmS udpvpn4 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7297 --max-clients 10000 --max-connections-for-client 8
+           [[ $(grep -wc "udpvpn4" /etc/autostart) = '0' ]] && {
+		       echo -e "ps x | grep 'udpvpn4' | grep -v 'grep' || screen -dmS udpvpn4 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7297 --max-clients 10000 --max-connections-for-client 8 --client-socket-sndbuf 10000" >> /etc/autostart
+		   } || {
+		       sed -i '/udpvpn4/d' /etc/autostart
+		       echo -e "ps x | grep 'udpvpn4' | grep -v 'grep' || screen -dmS udpvpn4 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7297 --max-clients 10000 --max-connections-for-client 8 --client-socket-sndbuf 10000" >> /etc/autostart
+		   }
+           sleep 1
+       }
+
+       fun_udpqw6 () {
+           screen -dmS udpvpn5 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7298 --max-clients 10000 --max-connections-for-client 8
+           [[ $(grep -wc "udpvpn5" /etc/autostart) = '0' ]] && {
+		       echo -e "ps x | grep 'udpvpn5' | grep -v 'grep' || screen -dmS udpvpn5 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7298 --max-clients 10000 --max-connections-for-client 8 --client-socket-sndbuf 10000" >> /etc/autostart
+		   } || {
+		       sed -i '/udpvpn5/d' /etc/autostart
+		       echo -e "ps x | grep 'udpvpn5' | grep -v 'grep' || screen -dmS udpvpn5 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7298 --max-clients 10000 --max-connections-for-client 8 --client-socket-sndbuf 10000" >> /etc/autostart
+		   }
+           sleep 1
+       }
+
+       fun_udpqw7 () {
+           screen -dmS udpvpn6 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7299 --max-clients 10000 --max-connections-for-client 8
+           [[ $(grep -wc "udpvpn6" /etc/autostart) = '0' ]] && {
+		       echo -e "ps x | grep 'udpvpn6' | grep -v 'grep' || screen -dmS udpvpn6 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7299 --max-clients 10000 --max-connections-for-client 8 --client-socket-sndbuf 10000" >> /etc/autostart
+		   } || {
+		       sed -i '/udpvpn6/d' /etc/autostart
+		       echo -e "ps x | grep 'udpvpn6' | grep -v 'grep' || screen -dmS udpvpn6 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7299 --max-clients 10000 --max-connections-for-client 8 --client-socket-sndbuf 10000" >> /etc/autostart
+		   }
+           sleep 1
+       }
     fun_bar 'fun_udpon'
+    fun_bar 'fun_udpqw3'
+    fun_bar 'fun_udpqw4'
+    fun_bar 'fun_udpqw5'
+    fun_bar 'fun_udpqw6'
+    fun_bar 'fun_udpqw7'
     echo -e "\n  \033[1;32mBADVPN ATIVO !\033[0m"
     sleep 3
     menu
@@ -50,23 +110,84 @@ fun_udp1 () {
         echo -e "\033[1;32mINSTALANDO O BADVPN !\033[0m\n"
 	    inst_udp () {
 	        cd $HOME
-            wget https://www.dropbox.com/s/980wmycsmk1ezu5/badvpn-udpgw -o /dev/null
+            wget https://www.dropbox.com/s/4ss5h9tmzfstwzv/badvpn-udpgw -o /dev/null
             mv -f $HOME/badvpn-udpgw /bin/badvpn-udpgw
             chmod 777 /bin/badvpn-udpgw
 	   }
 	   fun_bar 'inst_udp'
 	   echo -e "\n\033[1;32mINICIANDO O BADVPN... \033[0m\n"
        fun_udpon2 () {
-           screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 10000 --max-connections-for-client 5
+           screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 10000 --max-connections-for-client 8
            [[ $(grep -wc "udpvpn" /etc/autostart) = '0' ]] && {
-		       echo -e "ps x | grep 'udpvpn' | grep -v 'grep' || screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 10000 --max-connections-for-client 5 --client-socket-sndbuf 10000" >> /etc/autostart
+		       echo -e "ps x | grep 'udpvpn' | grep -v 'grep' || screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 10000 --max-connections-for-client 8 --client-socket-sndbuf 10000" >> /etc/autostart
 		   } || {
 		       sed -i '/udpvpn/d' /etc/autostart
-		       echo -e "ps x | grep 'udpvpn' | grep -v 'grep' || screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 10000 --max-connections-for-client 5 --client-socket-sndbuf 10000" >> /etc/autostart
+		       echo -e "ps x | grep 'udpvpn' | grep -v 'grep' || screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 10000 --max-connections-for-client 8 --client-socket-sndbuf 10000" >> /etc/autostart
 		   }
            sleep 1
        }
+
+       fun_udpon3 () {
+           screen -dmS udpvpn2 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7295 --max-clients 10000 --max-connections-for-client 8
+           [[ $(grep -wc "udpvpn2" /etc/autostart) = '0' ]] && {
+		       echo -e "ps x | grep 'udpvpn2' | grep -v 'grep' || screen -dmS udpvpn2 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7295 --max-clients 10000 --max-connections-for-client 8 --client-socket-sndbuf 10000" >> /etc/autostart
+		   } || {
+		       sed -i '/udpvpn2/d' /etc/autostart
+		       echo -e "ps x | grep 'udpvpn2' | grep -v 'grep' || screen -dmS udpvpn2 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7295 --max-clients 10000 --max-connections-for-client 8 --client-socket-sndbuf 10000" >> /etc/autostart
+		   }
+           sleep 1
+       }
+
+       fun_udpon4 () {
+           screen -dmS udpvpn3 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7296 --max-clients 10000 --max-connections-for-client 8
+           [[ $(grep -wc "udpvpn3" /etc/autostart) = '0' ]] && {
+		       echo -e "ps x | grep 'udpvpn3' | grep -v 'grep' || screen -dmS udpvpn3 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7296 --max-clients 10000 --max-connections-for-client 8 --client-socket-sndbuf 10000" >> /etc/autostart
+		   } || {
+		       sed -i '/udpvpn3/d' /etc/autostart
+		       echo -e "ps x | grep 'udpvpn3' | grep -v 'grep' || screen -dmS udpvpn3 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7296 --max-clients 10000 --max-connections-for-client 8 --client-socket-sndbuf 10000" >> /etc/autostart
+		   }
+           sleep 1
+       }
+
+       fun_udpon5 () {
+           screen -dmS udpvpn4 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7297 --max-clients 10000 --max-connections-for-client 8
+           [[ $(grep -wc "udpvpn4" /etc/autostart) = '0' ]] && {
+		       echo -e "ps x | grep 'udpvpn4' | grep -v 'grep' || screen -dmS udpvpn4 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7297 --max-clients 10000 --max-connections-for-client 8 --client-socket-sndbuf 10000" >> /etc/autostart
+		   } || {
+		       sed -i '/udpvpn4/d' /etc/autostart
+		       echo -e "ps x | grep 'udpvpn4' | grep -v 'grep' || screen -dmS udpvpn4 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7297 --max-clients 10000 --max-connections-for-client 8 --client-socket-sndbuf 10000" >> /etc/autostart
+		   }
+           sleep 1
+       }
+
+       fun_udpon6 () {
+           screen -dmS udpvpn5 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7298 --max-clients 10000 --max-connections-for-client 8
+           [[ $(grep -wc "udpvpn5" /etc/autostart) = '0' ]] && {
+		       echo -e "ps x | grep 'udpvpn5' | grep -v 'grep' || screen -dmS udpvpn5 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7298 --max-clients 10000 --max-connections-for-client 8 --client-socket-sndbuf 10000" >> /etc/autostart
+		   } || {
+		       sed -i '/udpvpn5/d' /etc/autostart
+		       echo -e "ps x | grep 'udpvpn5' | grep -v 'grep' || screen -dmS udpvpn5 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7298 --max-clients 10000 --max-connections-for-client 8 --client-socket-sndbuf 10000" >> /etc/autostart
+		   }
+           sleep 1
+       }
+
+       fun_udpon7 () {
+           screen -dmS udpvpn6 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7299 --max-clients 10000 --max-connections-for-client 8
+           [[ $(grep -wc "udpvpn6" /etc/autostart) = '0' ]] && {
+		       echo -e "ps x | grep 'udpvpn6' | grep -v 'grep' || screen -dmS udpvpn6 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7299 --max-clients 10000 --max-connections-for-client 8 --client-socket-sndbuf 10000" >> /etc/autostart
+		   } || {
+		       sed -i '/udpvpn6/d' /etc/autostart
+		       echo -e "ps x | grep 'udpvpn6' | grep -v 'grep' || screen -dmS udpvpn6 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7299 --max-clients 10000 --max-connections-for-client 8 --client-socket-sndbuf 10000" >> /etc/autostart
+		   }
+           sleep 1
+       }
+
        fun_bar 'fun_udpon2'
+       fun_bar 'fun_udpon3'
+       fun_bar 'fun_udpon4'
+       fun_bar 'fun_udpon5'
+       fun_bar 'fun_udpon6'
+       fun_bar 'fun_udpon7'
        echo -e "\n\033[1;32mBADVPN ATIVO !\033[0m"
        sleep 3
        menu
@@ -85,7 +206,63 @@ fun_udp2 () {
 		}
         sleep 1
     }
+
+    fun_stopbad2 () {
+        sleep 1
+        screen -r -S "udpvpn2" -X quit
+        screen -wipe 1>/dev/null 2>/dev/null
+        [[ $(grep -wc "udpvpn2" /etc/autostart) != '0' ]] && {
+		    sed -i '/udpvpn2/d' /etc/autostart
+		}
+        sleep 1
+    }
+
+    fun_stopbad3 () {
+        sleep 1
+        screen -r -S "udpvpn3" -X quit
+        screen -wipe 1>/dev/null 2>/dev/null
+        [[ $(grep -wc "udpvpn3" /etc/autostart) != '0' ]] && {
+		    sed -i '/udpvpn3/d' /etc/autostart
+		}
+        sleep 1
+    }
+
+    fun_stopbad4 () {
+        sleep 1
+        screen -r -S "udpvpn4" -X quit
+        screen -wipe 1>/dev/null 2>/dev/null
+        [[ $(grep -wc "udpvpn4" /etc/autostart) != '0' ]] && {
+		    sed -i '/udpvpn4/d' /etc/autostart
+		}
+        sleep 1
+    }
+
+    fun_stopbad5 () {
+        sleep 1
+        screen -r -S "udpvpn5" -X quit
+        screen -wipe 1>/dev/null 2>/dev/null
+        [[ $(grep -wc "udpvpn5" /etc/autostart) != '0' ]] && {
+		    sed -i '/udpvpn5/d' /etc/autostart
+		}
+        sleep 1
+    }
+
+    fun_stopbad6 () {
+        sleep 1
+        screen -r -S "udpvpn6" -X quit
+        screen -wipe 1>/dev/null 2>/dev/null
+        [[ $(grep -wc "udpvpn6" /etc/autostart) != '0' ]] && {
+		    sed -i '/udpvpn6/d' /etc/autostart
+		}
+        sleep 1
+    }
+
     fun_bar 'fun_stopbad'
+    fun_bar 'fun_stopbad2'
+    fun_bar 'fun_stopbad3'
+    fun_bar 'fun_stopbad4'
+    fun_bar 'fun_stopbad5'
+    fun_bar 'fun_stopbad6'
     echo -e "\n  \033[1;31mBADVPN PARADO !\033[0m"
     sleep 3
     menu
